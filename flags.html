@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Fetch data from the Restcountries API
+    fetch('https://restcountries.com/v3.1/all')
+    .then(response => response.json())
+    .then(data => {
+    // Extract country flags and display in the console
+    data.forEach(country => {
+      if (country.flags) {
+        console.log(`Country: ${country.name.common}, Flag: ${country.flags.png}`);
+      }
+    });
+  })
+
+
+    </script>
+</body>
+</html>
